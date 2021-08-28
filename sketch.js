@@ -32,11 +32,12 @@ var pig1
 var pig2
 var engine, world;
 var ball,box1;
-var ground
+var ground,img2
 var box2,box3 ;
 function preload(){
   go=loadImage("images/gameover.png")
-  getTime()
+  //getTime()
+  img=loadImage("images/bg.png")
 }
 function setup() {
   createCanvas(1200,500);
@@ -144,7 +145,7 @@ if(keyCode===65&&gamestate==="over"){
 }
  
 async function getTime(){
-  var response =  await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata")
+  var response =  await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
   var r = await response.json()
   var dt = r.datetime
   var h = dt.slice(11,13)
